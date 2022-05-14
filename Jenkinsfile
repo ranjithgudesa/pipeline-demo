@@ -1,7 +1,7 @@
 @Library("sharedlibrary") _
  pipeline {
   agent {
-        label 'linux1'
+        label 'linux'
     }
     stages {
       stage('Maven Build') {
@@ -11,7 +11,7 @@
     }
     stage('Deploy to Tomcat') {
       steps {
-        tomcatDeploy('172.31.0.67','app','tomcat')
+        tomcatDeploy('10.20.0.152','app','tomcat')
       }
     }
   }
